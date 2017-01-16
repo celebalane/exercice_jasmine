@@ -41,17 +41,13 @@ var paye = function(vente) {
 *//////////////////////////////////////////////////////////////
     
     //ici je met mon code ;)
-    var vente;
-    var ventesRabais;
     var ventesRegulier;
+    var ventesRabais;
     var payeHebdo;
 
-    ventesRegulier = (ventesRegulier * 6) / 100;
-    ventesRabais = (ventesRabais * 6) / 100;
-    vente = ventesRegulier + ventesRabais;
-    payeHebdo = 200 + ventesRegulier + ventesRabais;
+    payeHebdo = 200 + ((vente['ventesRegulier']*6)/100) + ((vente['ventesRabais']*3)/100);
     reponse = payeHebdo;
-
+	
 	return reponse;
 }
 var cesar = function(crypto, chaine) {
