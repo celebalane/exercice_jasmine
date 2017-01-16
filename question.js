@@ -8,7 +8,7 @@ L'algorithme doit lire la température en degrés Farenheit, et l'afficher en Fa
 	var temperature;
     var celsius;
 
-    celsius = Math.round((temperature - 32) * 5/9);
+    celsius = Math.round((temperature - 32) * 5/9); /*Arrondi le calcul selon le chiffre derrière la virgule*/
     reponse = celsius;
     	
 	return reponse;
@@ -23,7 +23,7 @@ var majeur = function(age) {
     //ici je met mon code ;)
 		var age;
 
-    	if (age >= 18){
+    	if (age >= 18){    /*Si l'age est supérieur ou égal à 18*/
         	reponse = 'majeur';
     	}
     	else {
@@ -45,8 +45,8 @@ var paye = function(vente) {
     var ventesRabais;
     var payeHebdo;
 
-    payeHebdo = 200 + ((vente['ventesRegulier']*6)/100) + ((vente['ventesRabais']*3)/100);
-    reponse = payeHebdo;
+    payeHebdo = 200 + ((vente['ventesRegulier']*6)/100) + ((vente['ventesRabais']*3)/100); /*calcul de la paye*/
+    reponse = Math.round(payeHebdo*100)/100; /*Arrondi à deux chiffres après la virgule*/
 	
 	return reponse;
 }
