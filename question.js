@@ -8,7 +8,7 @@ L'algorithme doit lire la température en degrés Farenheit, et l'afficher en Fa
 	var temperature;
     var celsius;
 
-    celsius = (temperature - 32) * 5/9;
+    celsius = Math.round((temperature - 32) * 5/9);
     reponse = celsius;
     	
 	return reponse;
@@ -41,12 +41,15 @@ var paye = function(vente) {
 *//////////////////////////////////////////////////////////////
     
     //ici je met mon code ;)
+    var vente;
     var ventesRabais;
     var ventesRegulier;
-    var vente;
     var payeHebdo;
 
-    payeHebdo = 200 + vente;
+    ventesRegulier = (ventesRegulier * 6) / 100;
+    ventesRabais = (ventesRabais * 6) / 100;
+    vente = ventesRegulier + ventesRabais;
+    payeHebdo = 200 + ventesRegulier + ventesRabais;
     reponse = payeHebdo;
 
 	return reponse;
