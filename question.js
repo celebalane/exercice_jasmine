@@ -10,7 +10,7 @@ L'algorithme doit lire la température en degrés Farenheit, et l'afficher en Fa
 
     celsius = Math.round((temperature - 32) * 5/9); /*Arrondi le calcul selon le chiffre derrière la virgule*/
     reponse = celsius;
-    	
+    //ou reponse = 	Math.round((temperature - 32) * 5/9);
 	return reponse;
 
 }
@@ -29,7 +29,7 @@ var majeur = function(age) {
     	else {
         	reponse = 'mineur';
     	}  
-
+//Autre solution age >= 18 ? reponse = "majeur" : reponse = "mineur"; oui/majeur non/mineur
     return reponse;
 }
 var paye = function(vente) {
@@ -41,13 +41,11 @@ var paye = function(vente) {
 *//////////////////////////////////////////////////////////////
     
     //ici je met mon code ;)
-    var ventesRegulier;
-    var ventesRabais;
     var payeHebdo;
 
     payeHebdo = 200 + ((vente['ventesRegulier']*6)/100) + ((vente['ventesRabais']*3)/100); /*calcul de la paye*/
     reponse = Math.round(payeHebdo*100)/100; /*Arrondi à deux chiffres après la virgule*/
-	
+//Autre réponse reponse = vente.ventesRegulier*6/100 + vente.ventesRabais*3/100+200;	
 	return reponse;
 }
 var cesar = function(crypto, chaine) {
@@ -60,6 +58,27 @@ var cesar = function(crypto, chaine) {
 *////////////////////////////////////////////////////////////////
     
     //ici je met mon code ;)
+//var motACoder = crypto.str;
+//var cle = crypto.cle;
+//var alphabet = chaine;
+//var lettreCoder = [''];
+//var i=0;
 
-    return reponse;
+//Ce que j'avais commencé : for(nbLettre = 0; nbLettre < motACoder.length-1; nbLettre ++) { /*Boucle pour coder chaque lettre*/
+	//lettreCoder.push = motACoder[i]) + alphabet + crypto.cle;
+	//reponse = lettreCoder;
+	//i++;
+//}
+reponse= '';
+
+for ( i=0; i <= crypto.str.length-1; i++) {  //Boucle pour la longueur du mot
+	caractere = crypto.str[i];               //Prend le caractère
+	index = chaine.indexOf(caractere);       //Recherche  de l'index du caractère dans chaine
+	indexcrypte = index + crypto.cle;         //calcul du nouvel index avec la clé
+	while (indexcrypte > chaine.length-1) {     //Tant que l'index du mot a coder est supérieur à la longueur de la chaine contenant l'alphabet de codage
+		indexcrypte = indexcrypte - chaine.length; //Soustrait la taille de chaine
+	}
+	reponse += chaine[indexcrypte];
+}
+     return reponse;
 }
